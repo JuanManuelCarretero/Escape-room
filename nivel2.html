@@ -14,8 +14,26 @@
 <body>
   <div class="container text-center">
     <h1>Nivel 2</h1>
-    <p class="lead">La clave de este nivel está en el encabezado oculto de esta página. ¿Podrás encontrarla?</p>
+    <p class="lead">Para comprobar que sabeis de lo que hablais, lo primero de todo se os pondra a prueba con vuestros conocimientos de powerscaler</p>
 
+    <p>Teneis que adivinar el personaje ficticio o real que se esconde, una vez lo hayais descubierto a todos, tendréis que ordenarlos del más fuerte al más debil</p>
+    <p>SOLO HAY UNA RESPUESTA CORRECTA REAL, no leo lloros, la clave es las iniciales ordenadas de los personajes del más fuerte al más debil</p>
+    <ol>
+      <li>GOTTA GO FAST</li>
+      <li>I am speed</li>
+      <li>Él siempre vuelve</li>
+      <li>Yo soy [TITLE CARD]</li>
+      <li>El mejor de COME diez</li>
+      <li>Dragon y bolas</li>
+      <li>BEAAAAAAAR</li>
+      <li>Despite everything, it's still you.</li>
+      <li>Rompiendo cosas mal</li>
+      <li>Vbucks</li>
+      <li>Tiene un hermano que también controla un dragón</li>
+    </ol>
+    
+    
+    
     <input type="text" id="claveInput" class="form-control mb-3" placeholder="Clave del nivel 2" />
     <button class="btn btn-primary" onclick="verificarClave()">Comprobar</button>
 
@@ -24,7 +42,7 @@
     <div id="pista" class="alert alert-warning mt-4 hidden">
       <strong>¡Bien hecho!</strong> Has pasado el segundo nivel. ¡Prepárate para el siguiente!
       <div class="mt-3">
-        <a href="nivel3.html" class="btn btn-dark">Ir al Nivel 3</a>
+        <a href="nivelSiguiente.html" class="btn btn-dark">Ir al Nivel 3</a>
       </div>
     </div>
   </div>
@@ -32,7 +50,7 @@
   <!-- CLAVE: escondido -->
 
   <script>
-    const claveCorrecta = "escondido";
+    const claveCorrecta = "safgigjwwrn";
     function verificarClave() {
       const input = document.getElementById("claveInput").value.trim().toLowerCase();
       const mensaje = document.getElementById("mensaje");
@@ -43,6 +61,7 @@
       } else {
         mensaje.innerHTML = '<span class="text-danger">Clave incorrecta. Inténtalo de nuevo.</span>';
       }
+      console.log("BUSCA PAGINA WEB")
     }
   </script>
 </body>

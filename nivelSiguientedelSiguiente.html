@@ -13,8 +13,9 @@
 </head>
 <body>
   <div class="container text-center">
-    <h1>Último Nivel</h1>
-    <p class="lead">¡Última clave para ganar!</p>
+    <h1>Casi último Nivel</h1>
+    <p class="lead">¡Última clave para ganar!? Quizas es troll</p>
+    <p >Hay notas repartidas por el centro, buscad las notas y ordenadlas para obtener la clave</p>
 
     <input type="text" id="claveInput" class="form-control mb-3" placeholder="Clave final" />
     <button class="btn btn-primary" onclick="verificarClave()">Comprobar</button>
@@ -22,13 +23,14 @@
     <div id="mensaje" class="mt-3"></div>
 
     <div id="final" class="alert alert-success mt-4 hidden">
-      <h2>🎉 ¡Felicidades! Has completado el Escape Room 🎉</h2>
-      <p>Eres libre... por ahora.</p>
+      
+        <a href="nivel5.html" class="btn btn-secondary">Ir al Nivel Final</a>
+      
     </div>
   </div>
 
   <script>
-    const claveCorrecta = "libertad";
+    const claveCorrecta = "12345";
     function verificarClave() {
       const input = document.getElementById("claveInput").value.trim().toLowerCase();
       const mensaje = document.getElementById("mensaje");

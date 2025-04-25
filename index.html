@@ -7,30 +7,52 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { background-color: #f5f5f5; }
-    .container { max-width: 600px; margin-top: 100px; }
+    .container { max-width: 1000px; margin-top: 100px; }
     .hidden { display: none; }
   </style>
 </head>
 <body>
-  <div class="container text-center">
-    <h1>Nivel 1</h1>
-    <p class="lead">Introduce la clave para desbloquear la siguiente pista y avanzar.</p>
+  <div class="container">
+    <h1>El misterio del asesinato de Pedro SURGEz</h1>
+    <p class="lead">Hoy España esta de luto, ya que alguien ha acabado con Pedro SURGEz, el lider de nuestra nación.
+    <br>Pero no todo está perdido, ya que tenemos a nuestra disposición al grupo que planeo este asesinato. ¿Caso cerrado entonces?
+    <br>¡No tan rápido! El grupo de asesinos contiene a un inocente entre ellos, y es nuestra misión descubrir quién es. Cada grupo deberá elegir al cliente que piensa defender
+    <br>El primer grupo que consiga defender a su cliente, lo declarará inocente, limpiará el nombre y puede que gane una recompensa por ello. El resto serán encarcelados.
+    </p>
 
+    <h2>El asesinado</h2>
+    <img src="images/Pedro.jpeg" alt="Pedro SURGEz" class="img-fluid xs-4" style="max-height: 600px; max-width: 600px;" />
+
+    <h2>El grupo de asesinos</h2>
+    <img src="images/Feijo.jpeg" alt="FANGjoo" class="img-fluid xs-4" style="max-height: 600px; max-width: 600px;" />
+    <p>Podría beneficiarle en su carrera brawlistica</p>
+    <img src="images/brainrot_monkey.jpg" alt="brainrot_monkey" class="img-fluid xs-4" style="max-height: 600px; max-width: 600px;" />
+    <p>¿Que esconde el mono?</p>
+    <img src="images/Diddy.jpg" alt="Diddy" class="img-fluid xs-4" style="max-height: 600px; max-width: 600px;" />
+    <p>No se puede defender a este pokemon tras sus antecedentes</p>
+    <img src="images/Kriby2_Easy-Resize.com.jpg" alt="Kirby Realista" class="img-fluid xs-4" style="max-height: 600px; max-width: 600px;" />
+    <p>Es simplemente Kirby que pasa</p>
+
+
+
+    <!--
+    <label for="claveInput" class="form-label">Introduce la clave: Evento que esta sucediendo en Jerez</label>
     <input type="text" id="claveInput" class="form-control mb-3" placeholder="Clave del nivel 1" />
     <button class="btn btn-primary" onclick="verificarClave()">Comprobar</button>
 
     <div id="mensaje" class="mt-3"></div>
 
     <div id="pista" class="alert alert-success mt-4 hidden">
-      <strong>¡Correcto!</strong> La pista es: <em>"No todo lo que brilla es oro, pero a veces está en el código fuente..."</em>
+      <strong>¡Correcto!</strong> La pista es: <em>"La ficción no tiene limites..."</em>
       <div class="mt-3">
         <a href="nivel2.html" class="btn btn-success">Ir al Nivel 2</a>
       </div>
     </div>
+    -->
   </div>
 
   <script>
-    const claveCorrecta = "javafx";
+    const claveCorrecta = "motos";
     function verificarClave() {
       const input = document.getElementById("claveInput").value.trim().toLowerCase();
       const mensaje = document.getElementById("mensaje");

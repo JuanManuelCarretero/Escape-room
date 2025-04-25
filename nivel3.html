@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Room - Nivel 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #fff8dc; }
+    .container { max-width: 600px; margin-top: 100px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h1>Nivel 3</h1>
+    <p class="lead">La clave está en la <strong>palabra más importante</strong> de este juego.</p>
+
+    <input type="text" id="claveInput" class="form-control mb-3" placeholder="Clave del nivel 3" />
+    <button class="btn btn-primary" onclick="verificarClave()">Comprobar</button>
+
+    <div id="mensaje" class="mt-3"></div>
+
+    <div id="pista" class="alert alert-success mt-4 hidden">
+      <strong>¡Sí!</strong> Has escapado del nivel 3.
+      <div class="mt-3">
+        <a href="nivel4.html" class="btn btn-secondary">Ir al Nivel Final</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const claveCorrecta = "escape";
+    function verificarClave() {
+      const input = document.getElementById("claveInput").value.trim().toLowerCase();
+      const mensaje = document.getElementById("mensaje");
+      const pista = document.getElementById("pista");
+      if (input === claveCorrecta) {
+        mensaje.innerHTML = '<span class="text-success">¡Clave correcta!</span>';
+        pista.classList.remove("hidden");
+      } else {
+        mensaje.innerHTML = '<span class="text-danger">Clave incorrecta. Inténtalo de nuevo.</span>';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nivel 5 - El arte del engaño</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hidden-message {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .hidden-message img {
+            width: 100%;
+            transition: filter 0.5s ease;
+        }
+
+        .hidden-message:hover img {
+            filter: brightness(0.3);
+        }
+
+        .hidden-message:hover::after {
+            content: 'claveoculta';
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px black;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+<div class="container py-5 text-center">
+    <h1 class="mb-4">Nivel 5: El arte del engaño</h1>
+
+    <div class="hidden-message">
+        <img src="https://via.placeholder.com/400x200.png?text=Observa+con+atención" alt="Imagen con pista">
+    </div>
+
+    <div class="mb-4">
+        <label for="claveImagen" class="form-label">¿Qué palabra viste en la imagen?</label>
+        <input type="text" id="claveImagen" class="form-control text-center" placeholder="Escribe la clave">
+        <button class="btn btn-primary mt-2" onclick="verificarImagen()">Comprobar</button>
+        <div id="resultadoImagen" class="mt-2"></div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="mb-4">
+        <p><strong>Acertijo:</strong> No tiene boca, pero puede responder. No tiene oídos, pero puede escuchar. ¿Qué es?</p>
+        <input type="text" id="claveAcertijo" class="form-control text-center" placeholder="Escribe tu respuesta">
+        <button class="btn btn-primary mt-2" onclick="verificarAcertijo()">Comprobar</button>
+        <div id="resultadoAcertijo" class="mt-2"></div>
+    </div>
+
+    <button id="btnSiguiente" class="btn btn-success mt-4 d-none" onclick="window.location.href='nivel6.html'">
+        ¡Avanza al siguiente nivel!
+    </button>
+</div>
+
+<script>
+    let imagenOk = false;
+    let acertijoOk = false;
+
+    function verificarImagen() {
+        const valor = document.getElementById('claveImagen').value.trim().toLowerCase();
+        const resultado = document.getElementById('resultadoImagen');
+        if (valor === 'claveoculta') {
+            imagenOk = true;
+            resultado.innerHTML = '<span class="text-success">¡Correcto!</span>';
+            comprobarTodo();
+        } else {
+            resultado.innerHTML = '<span class="text-danger">Incorrecto</span>';
+        }
+    }
+
+    function verificarAcertijo() {
+        const valor = document.getElementById('claveAcertijo').value.trim().toLowerCase();
+        const resultado = document.getElementById('resultadoAcertijo');
+        if (valor === 'eco') {
+            acertijoOk = true;
+            resultado.innerHTML = '<span class="text-success">¡Correcto!</span>';
+            comprobarTodo();
+        } else {
+            resultado.innerHTML = '<span class="text-danger">Incorrecto</span>';
+        }
+    }
+
+    function comprobarTodo() {
+        if (imagenOk && acertijoOk) {
+            document.getElementById('btnSiguiente').classList.remove('d-none');
+        }
+    }
+</script>
+</body>
+</html>
